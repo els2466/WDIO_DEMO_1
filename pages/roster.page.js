@@ -33,6 +33,11 @@ class RosterPage {
         return $('#hero-list > li:nth-child(6)')
     }
 
+    // create dynamic selector
+    get getItems() {
+        return $$('#hero-list > li')
+    }
+
     get addHeroLabel() {
         return $('#addHero-form > div > label')
     }
@@ -43,6 +48,11 @@ class RosterPage {
 
     get submitButton() {
         return $('#addHero-form > button')
+    }
+
+    addHero(hero) {
+        this.addHeroField.setValue(hero)
+        this.submitButton.click()
     }
 }
 

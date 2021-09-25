@@ -8,10 +8,7 @@ describe('Header Test Suite', () => {
 
         browser.url('/')
 
-        LoginPage.emailField.setValue('1@2.com')
-        LoginPage.passwordField.setValue('password')
-        LoginPage.submitButton.click()
-
+        LoginPage.login('1@2.com', 'password')
         assert.equal(LoginPage.overlay.isDisplayed(), false, 'not logged in')
 
         HeaderPage.linkLink.click()
@@ -22,10 +19,7 @@ describe('Header Test Suite', () => {
     it('should open Wolverine modal', () => {
         browser.url('/')
 
-        LoginPage.emailField.setValue('1@2.com')
-        LoginPage.passwordField.setValue('password')
-        LoginPage.submitButton.click()
-
+        LoginPage.login('1@2.com', 'password')
         assert.equal(LoginPage.overlay.isDisplayed(), false, 'not logged in')
 
         HeaderPage.heroFactsLink.click()
@@ -40,10 +34,7 @@ describe('Header Test Suite', () => {
     it('should open Spiderman modal', () => {
         browser.url('/')
 
-        LoginPage.emailField.setValue('1@2.com')
-        LoginPage.passwordField.setValue('password')
-        LoginPage.submitButton.click()
-
+        LoginPage.login('1@2.com', 'password')
         assert.equal(LoginPage.overlay.isDisplayed(), false, 'not logged in')
 
         HeaderPage.heroFactsLink.click()
@@ -58,10 +49,7 @@ describe('Header Test Suite', () => {
     it.skip('should close Wolverine modal', () => {
         browser.url('/')
 
-        LoginPage.emailField.setValue('1@2.com')
-        LoginPage.passwordField.setValue('password')
-        LoginPage.submitButton.click()
-
+        LoginPage.login('1@2.com', 'password')
         assert.equal(LoginPage.overlay.isDisplayed(), false, 'not logged in')
 
         browser.pause(1000)
@@ -74,10 +62,7 @@ describe('Header Test Suite', () => {
     it.skip('should close spiderman modal', () => {
         browser.url('/')
 
-        LoginPage.emailField.setValue('1@2.com')
-        LoginPage.passwordField.setValue('password')
-        LoginPage.submitButton.click()
-
+        LoginPage.login('1@2.com', 'password')
         assert.equal(LoginPage.overlay.isDisplayed(), false, 'not logged in')
 
         HeaderPage.heroFactsLink.click()
@@ -93,10 +78,7 @@ describe('Header Test Suite', () => {
     it('should search for wolverine', () => {
         browser.url('/')
 
-        LoginPage.emailField.setValue('1@2.com')
-        LoginPage.passwordField.setValue('password')
-        LoginPage.submitButton.click()
-
+        LoginPage.login('1@2.com', 'password')
         assert.equal(LoginPage.overlay.isDisplayed(), false, 'not logged in')
 
         HeaderPage.searchField.setValue('wolverine')
@@ -109,10 +91,7 @@ describe('Header Test Suite', () => {
     it('should error becuse did not search for wolverine', () => {
         browser.url('/')
 
-        LoginPage.emailField.setValue('1@2.com')
-        LoginPage.passwordField.setValue('password')
-        LoginPage.submitButton.click()
-
+        LoginPage.login('1@2.com', 'password')
         assert.equal(LoginPage.overlay.isDisplayed(), false, 'not logged in')
 
         HeaderPage.searchField.setValue('catwoman')
@@ -125,10 +104,7 @@ describe('Header Test Suite', () => {
     it('should close the alert', () => {
         browser.url('/')
 
-        LoginPage.emailField.setValue('1@2.com')
-        LoginPage.passwordField.setValue('password')
-        LoginPage.submitButton.click()
-
+        LoginPage.login('1@2.com', 'password')
         assert.equal(LoginPage.overlay.isDisplayed(), false, 'not logged in')
 
         HeaderPage.searchField.setValue('wolverine')

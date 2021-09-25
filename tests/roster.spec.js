@@ -2,16 +2,13 @@ const LoginPage = require('../pages/login.page')
 const RosterPage = require('../pages/roster.page')
 const assert = require('assert')
 
-describe.skip('Roster Test Suite', () => {
+describe('Roster Test Suite', () => {
 
     it('should have correct default values', () => {
 
         browser.url('/')
 
-        LoginPage.emailField.setValue('1@2.com')
-        LoginPage.passwordField.setValue('password')
-        LoginPage.submitButton.click()
-
+        LoginPage.login('1@2.com', 'password')
         assert.equal(LoginPage.overlay.isDisplayed(), false, 'not logged in')
 
         assert.equal(RosterPage.instructionText.getText(), 'Imagine that you are tasked with building a team of Superheros to save the world. We have given you a few heroes to start with. Add as many heroes as you would like to round out your dream team.', 'Roster instruction not correct')
@@ -31,10 +28,7 @@ describe.skip('Roster Test Suite', () => {
 
         browser.url('/')
 
-        LoginPage.emailField.setValue('1@2.com')
-        LoginPage.passwordField.setValue('password')
-        LoginPage.submitButton.click()
-
+        LoginPage.login('1@2.com', 'password')
         assert.equal(LoginPage.overlay.isDisplayed(), false, 'not logged in')
 
         let newItem = 'Bob'

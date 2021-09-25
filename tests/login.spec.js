@@ -94,10 +94,7 @@ describe('Login Test Suite', () => {
 
         browser.url('/')
 
-        LoginPage.emailField.setValue('1@2.com')
-        LoginPage.passwordField.setValue('password')
-        LoginPage.submitButton.click()
-
+        LoginPage.login('1@2.com', 'password')
         assert.equal(LoginPage.overlay.isDisplayed(), false, 'not logged in')
     })
 
@@ -105,10 +102,8 @@ describe('Login Test Suite', () => {
 
         browser.url('/')
 
-        LoginPage.emailField.setValue('1@2.com')
-        LoginPage.passwordField.setValue('password')
         LoginPage.rememberLoginCheckbox.click()
-        LoginPage.submitButton.click()
+        LoginPage.login('1@2.com', 'password')
 
         assert.equal(LoginPage.overlay.isDisplayed(), false, 'overlay is still displayed')
 
@@ -125,10 +120,7 @@ describe('Login Test Suite', () => {
 
         browser.url('/')
 
-        LoginPage.emailField.setValue('1@2.com')
-        LoginPage.passwordField.setValue('password')
-        LoginPage.submitButton.click()
-
+        LoginPage.login('1@2.com', 'password')
         assert.equal(LoginPage.overlay.isDisplayed(), false, 'overlay is still displayed')
 
         HeaderPage.logoutLink.click()
